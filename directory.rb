@@ -1,10 +1,18 @@
 @students = []
-
+@filename = "students.csv"
 def interactive_menu
+  intro_message
   loop do
     print_menu
     process(STDIN.gets.chomp)
   end
+end
+
+def intro_message
+  puts "Welcome to the Maker's Academy Student Database".center(60)
+  puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".center(60)
+  @students.count == 1 ? (puts "#{@students.count} student currently in #{@filename}".center(60)) : (puts "#{@students.count} students currenty in #{@filename}".center(60))
+  puts
 end
 
 def process(selection)
