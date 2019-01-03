@@ -55,10 +55,7 @@ def input_students
   while !name.empty? do
     # add the student hash to the array
     @students << {name: name, cohort: :november}
-    if @students.count == 1 then puts "Now we have 1 great student"
-    else
-      puts "Now we have #{@students.count} great students!"
-    end
+    @students.count == 1 ? (puts "Now we have 1 great student") : (puts "Now we have #{@students.count} great students!")
     # get another name from the user
     name = STDIN.gets.chomp
   end
@@ -76,10 +73,7 @@ def print_students_list
 end
 
 def print_footer
-  if @students.count == 1 then puts "Overall, we have 1 great student"
-  else
-    puts "Overall, we have #{@students.count} great students!"
-  end
+  @students.count == 1 ? (puts "Overall, we have 1 great student") : (puts "Overall, we have #{@students.count} great students!")
 end
 
 def save_students
